@@ -1,1 +1,1 @@
-jaguar -1 jaguar -1 =jaguar /etc/jaguar /bin/bash - User Login
+jaguar -1 jaguar -1 =jaguar /etc/jaguar /bin/bash wheel,dialout,kmem User Login
