@@ -12,7 +12,7 @@ This is a BR2_EXTERNAL directory to be used in building a wifi test device on a 
 5. make
 
 ### Gotchas
-1. After running makeconfig or linux-makeconfig, do "make saveconfigs" and (cd ../ext-wifitest; git status) to see if you need to share anything
+1. After running makeconfig or linux-makeconfig, do "make saveall" and (cd ../ext-wifitest; git status) to see if you need to share anything
 2. After a git-pull in ../ext-wifitest, do "make wifitest_defconfig" again to pick up new packags
 3.
 
