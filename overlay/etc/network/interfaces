@@ -9,7 +9,7 @@ iface eth0 inet manual
 
 auto wlan0
 iface wlan0 inet manual
-	pre-up wpa_supplicant -B -iwlan0 -Dnl80211 -c /etc/wpa_supplicant.conf
+	pre-up wpa_supplicant -B -iwlan0 -Dnl80211,wext -c /etc/wpa_supplicant.conf
 	post-up dhclient wlan0
  
 
