@@ -3,15 +3,13 @@
 auto lo
 iface lo inet loopback
 
-auto eth0
-iface eth0 inet dhcp
-	pre-up /etc/network/nfs_check
-	wait-delay 15
+
+iface eth0 inet manual
+	post-up dhclient eth0
 
 auto wlan0
 iface wlan0 inet manual
-	pre-up modprobe brcmfmac
 	pre-up wpa_supplicant -B -iwlan0 -Dnl80211 -c /etc/wpa_supplicant.conf
-	pre-up dhclient wlan0
+	post-up dhclient wlan0
  
 

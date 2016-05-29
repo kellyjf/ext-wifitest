@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+
+case "$1" in
+  start)
+        echo "Loading drivers..."
+	if [ -f /etc/modules ] ; then
+		cat /etc/modules | while read line; do
+			modprobe $line
+		done
+	fi
+        ;;
+  stop)
+        ;;
+  restart|reload)
+        "$0" stop
+        "$0" start
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
