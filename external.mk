@@ -1,3 +1,4 @@
+include $(sort $(wildcard $(BR2_EXTERNAL)/package/*/*.mk))
 
 export CONFIG_RTL8821AU=m
 
