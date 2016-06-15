@@ -1,6 +1,6 @@
 include $(sort $(wildcard $(BR2_EXTERNAL)/package/*/*.mk))
 
-export CONFIG_RTL8821AU=m
+#export CONFIG_RTL8821AU=m
 
 resync:
 	(cd $(BR2_EXTERNAL); git pull)

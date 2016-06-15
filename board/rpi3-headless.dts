@@ -5,6 +5,10 @@
 / {
 	compatible = "brcm,bcm2710","brcm,bcm2709";
 	model = "Raspberry Pi 3 Model B";
+	aliases {
+		serial0 = "/soc/uart@7e201000";
+		serial1 = "/soc/uart@7e215040";
+	};
 };
 
 &gpio {
@@ -103,7 +107,7 @@
 &uart1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart1_pins &bt_pins>;
-	status = "okay";
+	status = "disabled";
 };
 
 &spi0 {
