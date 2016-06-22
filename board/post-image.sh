@@ -8,7 +8,10 @@ GENIMAGE_TMP="${BUILD_DIR}/genimage.tmp"
 # Mark the kernel as DT-enabled
 mkdir -p "${BINARIES_DIR}/kernel-marked"
 ${HOST_DIR}/usr/bin/mkknlimg "${BINARIES_DIR}/zImage" \
-	"${BINARIES_DIR}/kernel-marked/zImage"
+	"${BINARIES_DIR}/kernel.img"
+${HOST_DIR}/usr/bin/mkknlimg --dtok --ddtk "${BINARIES_DIR}/u-boot.bin" \
+	"${BINARIES_DIR}/u-boot.img"
+
 
 rm -rf "${GENIMAGE_TMP}"
 

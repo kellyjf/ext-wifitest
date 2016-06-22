@@ -12,7 +12,7 @@ sed -i '/^kernel/d' ${BINARIES_DIR}/rpi-firmware/config.txt
 sed -i '/^device_tree/d' ${BINARIES_DIR}/rpi-firmware/config.txt
 sed -i '/^dtoverlay/d' ${BINARIES_DIR}/rpi-firmware/config.txt
 sed -i '1 i\
-kernel=u-boot.bin\
+kernel=u-boot.img\
 device_tree=rpi3-headless.dtb' ${BINARIES_DIR}/rpi-firmware/config.txt 
 
 cat >>  ${BINARIES_DIR}/rpi-firmware/config.txt <<!
