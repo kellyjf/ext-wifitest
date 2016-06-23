@@ -15,4 +15,6 @@ sed -i '1 i\
 kernel=u-boot.img\
 device_tree=rpi3-headless.dtb' ${BINARIES_DIR}/rpi-firmware/config.txt 
 cp ${BR2_EXTERNAL}/board/uboot.txt ${BINARIES_DIR} 
+cp ${BINARIES_DIR}/uboot-env.bin ${BINARIES_DIR}/uboot.env
+
 
