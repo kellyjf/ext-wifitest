@@ -11,6 +11,10 @@
 	};
 };
 
+&clk_uart0 {
+	clock-frequency = <48000000>;
+};
+
 &gpio {
 	sdhost_pins: sdhost_pins {
 		brcm,pins = <48 49 50 51 52 53>;
