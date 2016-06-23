@@ -1,0 +1,6 @@
+fdtfile=rpi3-headless.dtb
+bootargs=root=/dev/mmcblk0p2 rootwait rw console=ttyAMA0,115200
+sdload=fatload mmc 0 ${kernel_addr_r} kernel.img;fatload mmc 0 ${fdt_addr_r} ${fdtfile}
+sdboot=bootz ${kernel_addr_r} - ${fdt_addr_r}
+sdloot=fatload mmc 0 ${kernel_addr_r} kernel.img;fatload mmc 0 ${fdt_addr_r} ${fdtfile}; bootz ${kernel_addr_r} - ${fdt_addr_r}
+
