@@ -1,0 +1,24 @@
+From f97b5b9bac72b42ec1afe0153cef17d4a91e20d3 Mon Sep 17 00:00:00 2001
+From: John Kelly <jkelly@aircell.com>
+Date: Wed, 22 Jun 2016 22:17:55 -0600
+Subject: [PATCH] Support Ourlink AC600
+
+---
+ os_dep/linux/usb_intf.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/os_dep/linux/usb_intf.c b/os_dep/linux/usb_intf.c
+index 6d30d91..91ae8b5 100644
+--- a/os_dep/linux/usb_intf.c
++++ b/os_dep/linux/usb_intf.c
+@@ -286,6 +286,7 @@ static struct usb_device_id rtw_usb_id_tbl[] ={
+ 	{USB_DEVICE(USB_VENDER_ID_REALTEK, 0x8822),.driver_info = RTL8821},/* Default ID */
+ 	/*=== Customer ID ===*/
+ 	{USB_DEVICE(0x7392, 0xA811),.driver_info = RTL8821}, /* Edimax - Edimax */
++	{USB_DEVICE(0x0BDA, 0xA811),.driver_info = RTL8821}, /* Edimax - Edimax */
+ 	{USB_DEVICE(0x7392, 0xA812),.driver_info = RTL8821}, /* Edimax - EW-7811UTC */
+ 	{USB_DEVICE(0x7392, 0xA813),.driver_info = RTL8821}, /* Edimax - EW-7811UAC */
+ 	{USB_DEVICE(0x2001, 0x3314),.driver_info = RTL8821}, /* D-Link - Cameo */
+-- 
+1.8.3.1
+
