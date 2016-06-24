@@ -1,8 +1,7 @@
-bootcmd=run distro_bootcmd
+bootcmd=run tftpboot
 bootdelay=2
 baudrate=115200
 preboot=usb start
-loadaddr=0x00200000
 arch=arm
 cpu=armv7
 board=rpi
@@ -46,3 +45,6 @@ fdtfile=rpi3-headless.dtb
 bootargs=root=/dev/mmcblk0p2 rootwait rw console=ttyAMA0,115200
 sdload=fatload mmc 0 ${kernel_addr_r} kernel.img;fatload mmc 0 ${fdt_addr_r} ${fdtfile}
 sdboot=fatload mmc 0 ${kernel_addr_r} kernel.img;fatload mmc 0 ${fdt_addr_r} ${fdtfile}; bootz ${kernel_addr_r} - ${fdt_addr_r}
+setarg= setenv bootargs root=/dev/nfs ip=dhcp nfsroot=${rootpath} console=ttyAMA0,115200 rw 
+setnfs=setenv loadaddr ${kernel_addr_r}
+tftpboot=run setnfs; dhcp; run setarg; tftp ${fdt_addr_r} ${fdtfile}; bootz ${kernel_addr_r} - ${fdt_addr_r}
